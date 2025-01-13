@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Gestion de Citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-formulario (onCreate)="onCreateCita($event)" />
+</ion-content>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let c of citas; let i = index">
+      <ion-label>
+        <h2>{{ c.frase }}</h2>
+        <p>{{ c.autor }}</p>
+      </ion-label>
+      <!-- Botón para eliminar una cita -->
+      <ion-button (click)="c.id && eliminarCita(c.id)" fill="clear">
+        <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

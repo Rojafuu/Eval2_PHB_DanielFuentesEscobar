@@ -1,0 +1,35 @@
+/* Contenedor del formulario */
+.form-container {
+  width: 100%;                /* Asegura que el contenedor ocupe todo el ancho disponible */
+  border: 2px solid #c7c7c7;  /* Borde gris alrededor del formulario */
+  padding: 16px;              /* Espaciado interno para que el contenido no toque los bordes */
+  border-radius: 2px;         /* Bordes redondeados */
+  background-color: #f9f9f9;  /* Fondo claro para el formulario */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  margin: 250px 200px, 0px, 0px;       
+}
+
+/* Estilo específico para el formulario dentro del contenedor */
+form {
+
+  flex-direction: column;     /* Asegura que los items del formulario estén uno debajo del otro */
+  gap: 12px;                  /* Espaciado entre los elementos */
+}
+
+/* Estilo para el botón 'clear' */
+.custom-clear-button {
+  color: blue;               /* Color del texto en azul */
+  font-size: 14px;            /* Tamaño de la fuente */
+  padding: 0px 10px;          /* Espaciado interno del botón */
+  text-align: left;           /* Alinea el texto del botón a la izquierda */
+  display: inline-block;      /* Hace que el botón ocupe solo el tamaño del contenido */
+  margin-left: 0;             /* Asegura que no haya margen a la izquierda */
+  width: auto;                /* Asegura que el ancho del botón se ajuste al contenido */
+}
+
+/* Asegura que no haya margen o relleno extra alrededor del botón */
+ion-button {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}

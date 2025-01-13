@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Citas
+    </ion-title>
+    <ion-buttons slot="end">
+      <!-- Botón de configuración que redirige a la página de configuración -->
+      <ion-button [routerLink]="['/configuracion']">
+        <ion-icon icon="settings-outline" 
+        aria-label="Botón que dirige a la página Configuración donde se debe poder configurar las opciones de la aplicación"/>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Mostrar la cita aleatoria solo si permitirBorrarCita es true -->
+  <div *ngIf="permitirBorrarCita && citaAleatoria">
+    <ion-card>
+      <ion-card-header>
+        <!-- Mostramos la frase de la cita aleatoria -->
+        <ion-card-title>"{{ citaAleatoria.frase }}"</ion-card-title>
+        <!-- Mostramos el autor de la cita -->
+        <ion-card-subtitle>- {{ citaAleatoria.autor }}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <!-- Componente que recibe la cita aleatoria -->
+  <app-aleatoria [citaAleatoria]="citaAleatoria"></app-aleatoria>
+
+  <!-- Botón flotante para agregar una nueva cita -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/gestion-citas']">
+      <ion-icon name="add"
+        aria-label="Botón que dirige a la página Gestión de Citas, donde se pueden agregar y eliminar citas">
+      </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

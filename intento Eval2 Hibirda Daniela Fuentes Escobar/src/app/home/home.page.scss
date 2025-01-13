@@ -1,0 +1,36 @@
+ion-card {
+  background-color: #f9f9f9; /* Fondo gris más suave */
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 20px auto; /* Alineación automática para centrado */
+  max-width: 600px; /* Tamaño máximo para el card */
+  width: 90%; /* Ocupa el 90% del ancho disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Para alinear el contenido dentro del card */
+}
+
+ion-card-title {
+  color: blue; /* Azul brillante para el texto */
+  font-size: 1.3rem; /* Tamaño de fuente más grande */
+  margin-bottom: 10px; /* Separación con el subtítulo */
+  text-align: left; /* Alineamos la cita a la izquierda */
+}
+
+ion-card-subtitle {
+  color: black; /* Azul más oscuro para el autor */
+  font-size: 1.1rem; /* Un poco más grande que el tamaño predeterminado */
+  font-style: italic; /* Hacer el nombre del autor en cursiva */
+  text-align: right;
+ 
+}
+
+/* Contenedor de la cita (alineación dentro del ion-card) */
+.cita-content {
+  display: flex; /* Usamos flexbox para organizar los elementos en fila */
+  justify-content: space-between; /* Distribuimos el espacio entre la cita y el autor */
+  align-items: center; /* Alineamos verticalmente los elementos */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 0 15px; /* Espaciado a los lados */
+}

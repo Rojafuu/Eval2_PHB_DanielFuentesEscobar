@@ -1,0 +1,42 @@
+<ion-content>
+  <div class="form-container">
+    <ion-title>Crea una nueva Cita</ion-title>
+    <br>
+    <!-- Formulario con formulario reactivo -->
+    <form [formGroup]="CitaForm" (ngSubmit)="onClick()">
+      
+      <!-- Campo para la frase -->
+      <ion-item>
+        <ion-label position="floating">Cita</ion-label>
+        <ion-input
+          formControlName="frase"
+          required
+          minlength="5"
+          placeholder="Ingresa la cita"
+        ></ion-input>
+        <ion-text color="danger" *ngIf="CitaForm.controls.frase.invalid && (CitaForm.controls.frase.dirty || CitaForm.controls.frase.touched)">
+          La cita es obligatoria y debe tener al menos 5 caracteres.
+        </ion-text>
+      </ion-item>
+
+      <!-- Campo para el autor -->
+      <ion-item>
+        <ion-label position="floating">Autor</ion-label>
+        <ion-input
+          formControlName="autor"
+          required
+          minlength="2"
+          placeholder="Mahatma Gandhi"
+        ></ion-input>
+        <ion-text color="danger" *ngIf="CitaForm.controls.autor.invalid && (CitaForm.controls.autor.dirty || CitaForm.controls.autor.touched)">
+          El autor es obligatorio y debe tener al menos 2 caracteres.
+        </ion-text>
+      </ion-item>
+
+      <!-- Botón de enviar -->
+      <ion-button fill="clear" type="submit" [disabled]="CitaForm.invalid" class="custom-clear-button">
+        AGREGAR +
+      </ion-button>
+    </form>
+  </div>
+</ion-content>
